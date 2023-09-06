@@ -1,13 +1,14 @@
 import React, { useCallback, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { addSpacesBeforeCapitalLetters } from './utils/functions';
 
 function App() {
 
-  const [color, setColor] = useState("red");
+  const [color, setColor] = useState("MediumVioletRed");
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  const newColor = color === "red" ? "blue" : "red";
+  const newColor = color === "MediumVioletRed" ? "MidnightBlue" : "MediumVioletRed";
 
   return (
     <div className="App">
@@ -28,7 +29,7 @@ function App() {
             fontWeight: "bolder",
             cursor: "zoom-out"
           }}
-        >Change to {newColor}</button>
+        >Change to {addSpacesBeforeCapitalLetters(newColor)}</button>
         <input
           onChange={(e) => setIsButtonDisabled(e.target.checked)}
           type="checkbox" 
